@@ -1,0 +1,29 @@
+{
+  "name": "cosign-cli",
+  "version": "0.1.0",
+  "description": "Command line interface for cosign.io",
+  "keywords": [
+    "cosign.io",
+    "cli"
+  ],
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "cosign": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cosign-io/cosign-cli.git"
+  },
+  "author": "Johann Barbie <johannbarbie@me.com> (http://johba.de/)",
+  "license": "MIT",
+  "dependencies": {
+    "cosign-account-lib": "^0.1.0",
+    "vorpal": "^1.11.4"
+  }
+}
