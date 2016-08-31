@@ -13,7 +13,7 @@ type `help`, if you like ;)
 cosign$
 
 ```
-# Installation
+## Installation
 
 you should get a print like above with the following steps:
 ```
@@ -24,9 +24,9 @@ $ cosign-cli
 After installing cosign-cli, continue to:
 - [generate and register a key](#generate-and-register-a-key)
 - purchase a voucher from the [shop](https://holvi.com/shop/ocolin/)
-- [claim the voucher](#generate-and-register-a-key)
+- [claim the voucher](#claim-a-voucher)
 
-# Generate and Register a Key
+## Generate and Register a Key
 
 To create a working setup, you need to execute the following steps:
 
@@ -35,7 +35,7 @@ To create a working setup, you need to execute the following steps:
 3. read the key balance
 
 
-## Generating a Key
+### Generating a Key
 
 Install the cosign-cli as described here. then run this `generate` command:
 ```bash
@@ -52,7 +52,7 @@ confirm to remove from screen:
 ```
 Make sure to note the mnemonic. The mnemonic will be removed from the terminal history after you press a key and will be lost after restart of the CLI.
 
-## Register Key
+### Register a Key
 
 Now that you have generated a key in the previous step, continue to register it with this command:
 ```bash
@@ -89,7 +89,16 @@ email: your@email.com
 
 You can top-up your balance by [claiming a voucher](#claim-a-voucher).
 
-# Claim-a-Voucher
+### Loading a Key
+
+When restarting the CLI, all state is reset. You need to load your key again. Use this command:
+
+```bash
+cosign$ load
+```
+A password-like prompt will ask for a mnemonic or ECDSA hex private key.
+
+## Claim a Voucher
 
 To top-up the balance of a key, purchase a voucher at [the shop](https://holvi.com/shop/ocolin/).
 
@@ -108,9 +117,11 @@ If you haven't installed the CLI yet, follow [these instructions](#installation)
 
 If you haven't generated and registered a key yet, please execute [these steps](#generate-and-register-a-key) first.
 
+After restarting the CLI, make sure to [load your key](#loading-a-key) back into memory.
+
 Once you are able to display key status information, including a balance, please proceed.
 
-## Claiming a Crypto-Fulfillment
+### Claiming a Crypto-Fulfillment
 
 use the following command to claim:
 ```bash
