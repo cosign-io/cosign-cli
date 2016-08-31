@@ -15,10 +15,10 @@ cosign$
 ```
 # Installation
 
-you should get a print like above on your terminal with the following steps:
+you should get a print like above with the following steps:
 ```
-npm install cosign-cli
-cosign
+$ npm install cosign-cli
+$ cosign-cli
 ```
 
 After installing cosign-cli, continue to:
@@ -104,7 +104,7 @@ To claim the voucher you need to:
 2. load your key in the cosign-cli. 
 3. claim the crypto-fulfillment.
 
-If you haven't installed the CLI yet, follow [these instructions](#instalation).
+If you haven't installed the CLI yet, follow [these instructions](#installation).
 
 If you haven't generated and registered a key yet, please execute [these steps](#generate-and-register-a-key) first.
 
@@ -117,7 +117,7 @@ use the following command to claim:
 cosign$ claim cf:37:eyJpcPI4-v.Z_x4-gc3
 ```
 
-A successful claim will result in an email sent to your account and your balance updated:
+A successful claim will result in a notice sent to your email and your balance updated:
 ```
 cosign-id: 0092a8ff
 balance: 20.0
