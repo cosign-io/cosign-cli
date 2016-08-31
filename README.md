@@ -11,7 +11,6 @@
 type `help`, if you like ;)
 
 cosign$
-
 ```
 ## Installation
 
@@ -37,13 +36,10 @@ To create a working setup, you need to execute the following steps:
 
 ### Generating a Key
 
-Install the cosign-cli as described here. then run this `generate` command:
-```bash
+Install the cosign-cli as described, then run the `generate` command. A secret seed for your key will be generated and displayed as mnemonic.
+```
 cosign$ generate
-```
 
-A secret seed will be generated and displayed as mnemonic. Example:
-```
 Your mnemonic is:
 
  ***** ***** ******* ***** ******* **** ******* ****** ****** ****** ******* *****
@@ -55,7 +51,7 @@ Make sure to note the mnemonic. The mnemonic will be removed from the terminal h
 ### Register a Key
 
 Now that you have generated a key in the previous step, continue to register it with this command:
-```bash
+```
 cosign$ register your@email.com
 
 Email verification requested. A crypto-fulfillment will be sent to you.
@@ -70,33 +66,29 @@ We have received a request to authorize this email address for Cosign.io. If you
 cf:0:RoFF18igQ7msaEjUKU21zw
 ```
 
-Note the line starting with **cf:0:**. This is a crypto-fulfillment. Return it to the CLI by tiping:
-```bash
+Note the line starting with **cf:0:**. This is a crypto-fulfillment. Return it to the CLI with the `confirm` command. You should receive status information of your registered key.
+```
 cosign$ confirm cf:0:RoFF18igQ7msaEjUKU21zw
-```
 
-To verify that setup was successful, type:
-```bash
-cosign$ info
-```
-
-You should receive status information of your registered key:
-```
 cosign-id: 0092a8ff
 balance: 0.0
 email: your@email.com
 ```
 
-You can top-up your balance by [claiming a voucher](#claim-a-voucher).
+As you see, your key starts with a 0.0 balance. You can top-up your balance by [claiming a voucher](#claim-a-voucher).
 
 ### Loading a Key
 
-When restarting the CLI, all state is reset. You need to load your key again. Use this command:
-
-```bash
-cosign$ load
+When restarting the CLI, all state is reset. You need to load your key again by using the `load` command. A password-like prompt will ask for a mnemonic or ECDSA hex private key.
 ```
-A password-like prompt will ask for a mnemonic or ECDSA hex private key.
+cosign$ load
+
+Please enter a mnemonic or hex string to load your key:
+mnemonic/hex: *********************************************
+
+Key loded successfully.
+```
+
 
 ## Claim a Voucher
 
@@ -123,13 +115,10 @@ Once you are able to display key status information, including a balance, please
 
 ### Claiming a Crypto-Fulfillment
 
-use the following command to claim:
-```bash
+use the `claim <fulfillment>` command to claim. A successful claim will result in a notice sent to your email and your balance updated.
+```
 cosign$ claim cf:37:eyJpcPI4-v.Z_x4-gc3
-```
 
-A successful claim will result in a notice sent to your email and your balance updated:
-```
 cosign-id: 0092a8ff
 balance: 20.0
 email: your@email.com
