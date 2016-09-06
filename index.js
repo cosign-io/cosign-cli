@@ -181,7 +181,7 @@ vorpal
   });
 
 vorpal
-  .delimiter('cyfin$')
+  .delimiter('CyFin$')
   .show()
   .log(' _____        ______  _            _        ')
   .log('/  __ \\       |  ___|(_)          (_)       ')

@@ -5,7 +5,7 @@
 ## Installation
 
 ```
-$ npm install cyfin-cli
+$ npm link cyfin-cli
 $ cyfin-cli
 ```
 
