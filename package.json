@@ -1,10 +1,12 @@
 {
-  "name": "cosign-cli",
+  "name": "cyfin-cli",
   "version": "0.1.0",
-  "description": "Command line interface for cosign.io",
+  "description": "Command line interface for CyFin.io",
   "keywords": [
-    "cosign.io",
-    "cli"
+    "cifyn.io",
+    "banking",
+    "IoT",
+    "crypto-condition"
   ],
   "files": [
     "index.js",
@@ -14,16 +16,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "cosign-cli": "index.js"
+    "cyfin-cli": "index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cosign-io/cosign-cli.git"
+    "url": "git+https://github.com/cyfin-io/cyfin-cli.git"
   },
   "author": "Johann Barbie <johannbarbie@me.com> (http://johba.de/)",
   "license": "MIT",
   "dependencies": {
-    "cosign-account-lib": "^0.1.0",
+    "cyfin-account-lib": "^0.1.0",
     "vorpal": "^1.11.4"
   }
 }

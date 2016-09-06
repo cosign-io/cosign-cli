@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-const AccountManager = require('cosign-account-lib');
+const AccountManager = require('cyfin-account-lib');
 const vorpal = require('vorpal')();
 const WARN = '!!!Warning - make sure to note the mnemonic. It will be lost after restart of the CLI!'
 const NO_KEY = 'No key loaded. Use `genKey` or `loadKey` commands.';
@@ -28,7 +28,7 @@ vorpal
     var self = this;
     account.info().then(function(rsp) {
       account.id = rsp.id.split('-')[0];
-      self.log('cosign-id: ' + account.id);
+      self.log('CyFin-Id: ' + account.id);
       self.log('balance: ' + parseFloat(rsp.balance));
       self.log('email: ' + rsp.email + '\n');
       callback();  
@@ -61,7 +61,7 @@ vorpal
         message: 'mnemonic/hex: '
     }], function(args) {
       account = new AccountManager(args.mnemonic);
-      self.log('key: ' + account.getKey().address + '\nKey loded successfully.\n');
+      self.log('key: ' + account.getKey().address + '\nKey loaded successfully.\n');
       callback();
     });
   });
@@ -139,7 +139,7 @@ vorpal
     var self = this;
     account.confirm(args.fulfillment).then(function(rsp) {
       account.id = rsp.id.split('-')[0];
-      self.log('cosign-id: ' + account.id);
+      self.log('CyFin-Id: ' + account.id);
       self.log('balance: ' + parseFloat(rsp.balance));
       self.log('email: ' + rsp.email + '\n\n');
       self.log('');
@@ -163,7 +163,7 @@ vorpal
     } else {
       var key = account.getKey();
       if (account.id)
-        this.log('cosign-id: ' + account.id);
+        this.log('CyFin-Id: ' + account.id);
       this.log('key: ' + key.address + '\n');
     }
     var self = this;
@@ -181,16 +181,16 @@ vorpal
   });
 
 vorpal
-  .delimiter('cosign$')
+  .delimiter('cyfin$')
   .show()
-  .log('                 _               _       ')
-  .log('                (_)             (_)      ')
-  .log('    ___ ___  ___ _  __ _ _ __    _  ___  ')
-  .log('   / __/ _ \\/ __| |/ _` | \'_ \\  | |/ _ \\ ')
-  .log('  | (_| (_) \\__ \\ | (_| | | | |_| | (_) |')
-  .log('   \\___\\___/|___/_|\\__, |_| |_(_)_|\\___/ ')
-  .log('                    __/ |')
-  .log('   An open, secure |___/ identity platform.')
+  .log(' _____        ______  _            _        ')
+  .log('/  __ \\       |  ___|(_)          (_)       ')
+  .log('| /  \\/ _   _ | |_    _  _ __      _   ___  ')
+  .log('| |    | | | ||  _|  | || \'_ \\    | | / _ \\ ')
+  .log('| \\__/\\| |_| || |    | || | | | _ | || (_) |')
+  .log(' \\____/ \\__, |\\_|    |_||_| |_|(_)|_| \\___/ ')
+  .log('         __/ |                              ')
+  .log('        |___/       Banking for the IoT     ')
   .log('')
   .log('type `help`, if you like ;)')
   .log('');
